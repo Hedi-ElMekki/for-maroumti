@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Maram ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Playfair+Display&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    transition: background 1s ease, color 1s ease;
+}
+
+/* Sections */
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* BEFORE */
+.before {
+    background: #111;
+    color: #bbb;
+}
+
+/* MEET */
+.meet {
+    background: linear-gradient(45deg, #d9a7c7, #fffcdc);
+    color: #333; /* darker for readability */
+}
+
+/* AFTER */
+.after {
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    color: #2c2c2c; /* readable dark text */
+}
+
+@keyframes gradient {
+    0% { background-position: 0% }
+    50% { background-position: 100% }
+    100% { background-position: 0% }
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+}
+h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+}
+p {
+    max-width: 600px;
+    font-size: 1.2rem;
+}
+
+/* Moments grid */
+.moments {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 20px;
+    width: 80%;
+}
+
+.card {
+    background: rgba(255,255,255,0.5);
+    color: #222;
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.hidden {
+    opacity: 0;
+    margin-top: 10px;
+    font-size: 0.95rem;
+    transition: 0.5s;
+}
+
+.card:hover .hidden {
+    opacity: 1;
+}
+</style>
+</head>
+
+<body>
+
+<section class="before">
+    <div>
+        <h1>Before You</h1>
+        <p>
+            Life was okay, predictable and quiet.  
+            Nothing was wrong, but nothing felt truly right either.
+        </p>
+    </div>
+</section>
+
+<section class="meet">
+    <div>
+        <h1>Then I Met You, Maramoumti ❤️</h1>
+        <p>
+            And slowly... everything started to change.
+        </p>
+    </div>
+</section>
+
+<section class="after">
+    <div>
+        <h1>After You</h1>
+        <p>
+            Colors became brighter.  
+            Moments became memories.  
+            And somehow everything connected.
+        </p>
+    </div>
+</section>
+
+<section class="after">
+    <div class="moments">
+        <p>*move the cursor on each card*</p>
+        <div class="card">
+            The way time moves different with you
+            <div class="hidden">Minutes stretch when I wait for you, and disappear when I'm with you</div>
+        </div>
+        <div class="card">
+            The version of me that exists around you
+            <div class="hidden">I don’t need to try to better, I just am myself, without even noticing</div>
+        </div>
+        <div class="card">
+            The small details you don’t even notice
+            <div class="hidden">The change of tones in your voice, the way you react to the good and bad, the things that make you YOU</div>
+        </div>
+        <div class="card">
+            The calm you bring without trying
+            <div class="hidden">Even on the worst days, you somehow make everything feel lighter</div>
+        </div>
+    </div>
+</section>
+
+<section class="after">
+    <div>
+        <h1>Final Truth</h1>
+        <p>
+            I didn’t just fall in love with you 
+            I found a version of myself I never knew existed.  
+            And I never want to lose that or you.
+        </p>
+    </div>
+</section>
+
+<script>
+/* Smooth reveal on scroll */
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+        }
+    });
+}, { threshold: 0.2 });
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+</script>
+
+</body>
+</html>
